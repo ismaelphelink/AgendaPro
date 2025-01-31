@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual do Usuário - AgendaPro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .manual-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 5%;
+    }
+
+    .manual-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .manual-header h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .manual-navigation {
+      background: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .manual-navigation ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .manual-navigation a {
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: all 0.3s ease;
+    }
+
+    .manual-navigation a:hover {
+      background: var(--background-color);
+      color: var(--primary-color);
+    }
+
+    .manual-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .manual-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .manual-section h3 {
+      color: var(--accent-color);
+      margin: 1.5rem 0 1rem;
+    }
+
+    .manual-section p {
+      color: var(--text-color);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .manual-section ul {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+
+    .manual-section li {
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .tip-box {
+      background: var(--background-color);
+      padding: 1rem;
+      border-left: 4px solid var(--accent-color);
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .tip-box strong {
+      color: var(--accent-color);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .support-card {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .support-card h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .support-card a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-light);
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .screenshot {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .manual-header h1 {
+        font-size: 2rem;
+      }
+      
+      .manual-navigation ul {
+        flex-direction: column;
+      }
+      
+      .manual-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-calendar-check"></i>
+        <span>AgendaPro</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="about.html">Sobre</a>
+      <button class="login-btn" onclick="window.location.href='login.html'">Entrar</button>
+    </div>
+  </nav>
+
+  <div class="manual-container">
+    <div class="manual-header">
+      <h1>Manual do Usuário</h1>
+      <p>Guia completo para utilização do AgendaPro</p>
+    </div>
+
+    <nav class="manual-navigation">
+      <ul>
+        <li><a href="#primeiros-passos">Primeiros Passos</a></li>
+        <li><a href="#agendamentos">Agendamentos</a></li>
+        <li><a href="#perfil">Gerenciar Perfil</a></li>
+        <li><a href="#admin">Área Administrativa</a></li>
+        <li><a href="#faq">Dúvidas Frequentes</a></li>
+        <li><a href="#suporte">Suporte</a></li>
+      </ul>
+    </nav>
+
+    <div id="primeiros-passos" class="manual-section">
+      <h2><i class="fas fa-flag-checkered"></i> Primeiros Passos</h2>
+      <h3>Criando sua conta</h3>
+      <p>Para começar a usar o AgendaPro, siga estes passos:</p>
+      <ol>
+        <li>Clique no botão "Entrar" no canto superior direito</li>
+        <li>Selecione a opção "Cadastre-se"</li>
+        <li>Preencha seus dados pessoais</li>
+        <li>Confirme seu email</li>
+        <li>Faça login com suas credenciais</li>
+      </ol>
+      
+      <div class="tip-box">
+        <strong>Dica:</strong>
+        <p>Mantenha seus dados sempre atualizados para receber notificações importantes sobre seus agendamentos.</p>
+      </div>
+    </div>
+
+    <div id="agendamentos" class="manual-section">
+      <h2><i class="fas fa-calendar-check"></i> Realizando Agendamentos</h2>
+      <h3>Como agendar um serviço</h3>
+      <p>O processo de agendamento é simples e intuitivo:</p>
+      <ol>
+        <li>Selecione o serviço desejado dentre as opções disponíveis</li>
+        <li>Adicione uma descrição específica do serviço (opcional)</li>
+        <li>Escolha uma data disponível no calendário</li>
+        <li>Selecione um horário disponível</li>
+        <li>Confirme seu agendamento</li>
+      </ol>
+
+      <div class="tip-box">
+        <strong>Importante:</strong>
+        <p>Certifique-se de chegar com 5 minutos de antecedência ao seu horário agendado.</p>
+      </div>
+    </div>
+
+    <div id="perfil" class="manual-section">
+      <h2><i class="fas fa-user-circle"></i> Gerenciando seu Perfil</h2>
+      <h3>Meus Agendamentos</h3>
+      <p>Para visualizar ou gerenciar seus agendamentos:</p>
+      <ol>
+        <li>Clique em seu nome no canto superior direito</li>
+        <li>Selecione "Meus Agendamentos"</li>
+        <li>Visualize todos os seus agendamentos ativos</li>
+        <li>Cancele ou remarque conforme necessário</li>
+      </ol>
+    </div>
+
+    <div id="admin" class="manual-section">
+      <h2><i class="fas fa-user-shield"></i> Área Administrativa</h2>
+      <h3>Recursos para Administradores</h3>
+      <p>Se você é um administrador, tem acesso a recursos especiais:</p>
+      <ul>
+        <li>Visualização completa de todos os agendamentos</li>
+        <li>Gerenciamento de horários disponíveis</li>
+        <li>Criação e edição de eventos especiais</li>
+        <li>Relatórios e estatísticas</li>
+      </ul>
+    </div>
+
+    <div id="faq" class="manual-section">
+      <h2><i class="fas fa-question-circle"></i> Dúvidas Frequentes</h2>
+      
+      <div class="faq-item">
+        <p class="faq-question">Como cancelo um agendamento?</p>
+        <p>Para cancelar um agendamento, acesse "Meus Agendamentos", localize o horário desejado e clique em "Cancelar". O cancelamento deve ser feito com no mínimo 4 horas de antecedência.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Posso remarcar meu horário?</p>
+        <p>Sim, você pode remarcar seu horário através da opção "Meus Agendamentos", desde que haja disponibilidade na nova data/horário desejado.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Como recebo a confirmação do agendamento?</p>
+        <p>Após finalizar seu agendamento, você receberá uma confirmação na tela e, se cadastrado, também receberá por email.</p>
+      </div>
+    </div>
+
+    <div id="suporte" class="manual-section">
+      <h2><i class="fas fa-headset"></i> Suporte Técnico</h2>
+      <p>Caso precise de ajuda adicional, nossa equipe de suporte está disponível por diversos canais:</p>
+      <ul>
+        <li>Email: suporte@agendapro.com</li>
+        <li>WhatsApp: (11) 99999-9999</li>
+        <li>Chat online: Segunda a Sexta, das 8h às 18h</li>
+      </ul>
+
+      <div class="support-card">
+        <h3>Precisa de ajuda imediata?</h3>
+        <p>Entre em contato com nosso suporte técnico</p>
+        <a href="help.html" target="_blank">Acessar Central de Ajuda</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>AgendaPro</h4>
+        <p>Sua solução completa para agendamentos online</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Úteis</h4>
+        <a href="terms.html">Termos de Uso</a>
+        <a href="privacy.html">Política de Privacidade</a>
+        <a href="manual.html">Manual do Usuário</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>contato@agendapro.com</p>
+        <p>(11) 99999-9999</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

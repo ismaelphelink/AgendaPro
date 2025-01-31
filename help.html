@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Ajuda - AgendaPro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .help-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 5%;
+    }
+
+    .help-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .help-header h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .help-header p {
+      color: var(--text-color);
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .search-section {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .search-box {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .search-input:focus {
+      outline: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .help-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .help-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .help-card i {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .help-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .help-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .help-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    .help-card a {
+      color: var(--text-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .help-card a:hover {
+      color: var(--accent-color);
+    }
+
+    .contact-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-method {
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      background: var(--background-color);
+    }
+
+    .contact-method i {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .contact-method h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-method p {
+      color: var(--text-color);
+    }
+
+    .help-topics {
+      margin-top: 3rem;
+    }
+
+    .topic-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .topic-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-color);
+    }
+
+    .topic-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .topic-item {
+      padding: 1rem;
+      border-bottom: 1px solid var(--gray-light);
+      cursor: pointer;
+    }
+
+    .topic-item:last-child {
+      border-bottom: none;
+    }
+
+    .topic-item h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topic-content {
+      display: none;
+      padding: 1rem;
+      background: var(--background-color);
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .topic-item.active .topic-content {
+      display: block;
+    }
+
+    .topic-item.active h3 i {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 768px) {
+      .help-header h1 {
+        font-size: 2rem;
+      }
+      
+      .search-section {
+        padding: 1.5rem;
+      }
+      
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-calendar-check"></i>
+        <span>AgendaPro</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="about.html">Sobre</a>
+      <button class="login-btn" onclick="window.location.href='login.html'">Entrar</button>
+    </div>
+  </nav>
+
+  <div class="help-container">
+    <div class="help-header">
+      <h1>Central de Ajuda</h1>
+      <p>Como podemos ajudar você hoje?</p>
+    </div>
+
+    <div class="search-section">
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="Busque por suas dúvidas...">
+      </div>
+    </div>
+
+    <div class="help-grid">
+      <div class="help-card">
+        <i class="fas fa-book"></i>
+        <h3>Guias e Tutoriais</h3>
+        <ul>
+          <li><a href="manual.html"><i class="fas fa-arrow-right"></i> Manual do Usuário</a></li>
+          <li><a href="#agendamentos"><i class="fas fa-arrow-right"></i> Como fazer agendamentos</a></li>
+          <li><a href="#perfil"><i class="fas fa-arrow-right"></i> Gerenciar seu perfil</a></li>
+          <li><a href="#notificacoes"><i class="fas fa-arrow-right"></i> Configurar notificações</a></li>
+        </ul>
+      </div>
+
+      <div class="help-card">
+        <i class="fas fa-question-circle"></i>
+        <h3>Perguntas Frequentes</h3>
+        <ul>
+          <li><a href="#cancelamentos"><i class="fas fa-arrow-right"></i> Política de cancelamento</a></li>
+          <li><a href="#pagamentos"><i class="fas fa-arrow-right"></i> Formas de pagamento</a></li>
+          <li><a href="#horarios"><i class="fas fa-arrow-right"></i> Horários disponíveis</a></li>
+          <li><a href="#reagendamento"><i class="fas fa-arrow-right"></i> Como remarcar</a></li>
+        </ul>
+      </div>
+
+      <div class="help-card">
+        <i class="fas fa-tools"></i>
+        <h3>Suporte Técnico</h3>
+        <ul>
+          <li><a href="#problemas-acesso"><i class="fas fa-arrow-right"></i> Problemas de acesso</a></li>
+          <li><a href="#erro-agendamento"><i class="fas fa-arrow-right"></i> Erros no agendamento</a></li>
+          <li><a href="#recuperar-senha"><i class="fas fa-arrow-right"></i> Recuperar senha</a></li>
+          <li><a href="#bug-report"><i class="fas fa-arrow-right"></i> Reportar um problema</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="help-topics">
+      <div class="topic-section">
+        <h2>Tópicos Populares</h2>
+        <ul class="topic-list">
+          <li class="topic-item">
+            <h3>Como fazer um agendamento? <i class="fas fa-chevron-down"></i></h3>
+            <div class="topic-content">
+              <p>Para fazer um agendamento, siga estes passos:</p>
+              <ol>
+                <li>Faça login em sua conta</li>
+                <li>Selecione o serviço desejado</li>
+                <li>Escolha uma data disponível no calendário</li>
+                <li>Selecione um horário disponível</li>
+                <li>Confirme seu agendamento</li>
+              </ol>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <h3>Como cancelar ou remarcar? <i class="fas fa-chevron-down"></i></h3>
+            <div class="topic-content">
+              <p>Para cancelar ou remarcar um agendamento:</p>
+              <ol>
+                <li>Acesse "Meus Agendamentos" no menu</li>
+                <li>Localize o agendamento desejado</li>
+                <li>Clique em "Cancelar" ou "Remarcar"</li>
+                <li>Siga as instruções na tela</li>
+              </ol>
+              <p>Obs: Cancelamentos devem ser feitos com no mínimo 4 horas de antecedência.</p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <h3>Problemas com o login? <i class="fas fa-chevron-down"></i></h3>
+            <div class="topic-content">
+              <p>Se estiver tendo problemas para acessar sua conta:</p>
+              <ul>
+                <li>Verifique se seu email está correto</li>
+                <li>Certifique-se de que o CAPS LOCK não está ativado</li>
+                <li>Tente recuperar sua senha através do link "Esqueci minha senha"</li>
+                <li>Limpe o cache do navegador</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <h2>Ainda precisa de ajuda?</h2>
+      <div class="contact-grid">
+        <div class="contact-method">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>suporte@agendapro.com</p>
+          <p>Resposta em até 24 horas</p>
+        </div>
+
+        <div class="contact-method">
+          <i class="fab fa-whatsapp"></i>
+          <h3>WhatsApp</h3>
+          <p>(11) 99999-9999</p>
+          <p>Seg a Sex, 8h às 18h</p>
+        </div>
+
+        <div class="contact-method">
+          <i class="fas fa-comments"></i>
+          <h3>Chat Online</h3>
+          <p>Atendimento em tempo real</p>
+          <p>Seg a Sex, 8h às 18h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>AgendaPro</h4>
+        <p>Sua solução completa para agendamentos online</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Úteis</h4>
+        <a href="terms.html">Termos de Uso</a>
+        <a href="privacy.html">Política de Privacidade</a>
+        <a href="manual.html">Manual do Usuário</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>contato@agendapro.com</p>
+        <p>(11) 99999-9999</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle topics
+    document.querySelectorAll('.topic-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    const topics = document.querySelectorAll('.topic-item');
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      topics.forEach(topic => {
+        const text = topic.textContent.toLowerCase();
+        if (text.includes(searchTerm)) {
+          topic.style.display = 'block';
+        } else {
+          topic.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

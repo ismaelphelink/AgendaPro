@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - AgendaPro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 5%;
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .about-header h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-header p {
+      color: var(--text-color);
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card i {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card p {
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .mission-section {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 4rem 5%;
+      margin: 4rem 0;
+      border-radius: 1rem;
+      text-align: center;
+    }
+
+    .mission-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .mission-section p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .team-section {
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .team-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 3rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-member {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .team-member i {
+      font-size: 3rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .team-member h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-member p {
+      color: var(--text-color);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-header h1 {
+        font-size: 2rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .mission-section {
+        margin: 2rem 0;
+        padding: 2rem 5%;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-calendar-check"></i>
+        <span>AgendaPro</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <button class="login-btn" onclick="window.location.href='login.html'">Entrar</button>
+    </div>
+  </nav>
+
+  <div class="about-container">
+    <div class="about-header">
+      <h1>Sobre o AgendaPro</h1>
+      <p>Uma solução moderna e eficiente para gerenciamento de agendamentos online</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-clock"></i>
+        <h3>Agendamento Simplificado</h3>
+        <p>Faça seus agendamentos de forma rápida e intuitiva, escolhendo o melhor horário que se adeque à sua rotina.</p>
+      </div>
+      
+      <div class="feature-card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Gerenciamento Eficiente</h3>
+        <p>Sistema completo para administração de horários, serviços e clientes, tornando a gestão do seu negócio mais eficiente.</p>
+      </div>
+      
+      <div class="feature-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Acesso em Qualquer Lugar</h3>
+        <p>Acesse sua agenda de qualquer dispositivo, a qualquer momento, mantendo o controle total dos seus compromissos.</p>
+      </div>
+    </div>
+
+    <div class="mission-section">
+      <h2>Nossa Missão</h2>
+      <p>Facilitar a vida de profissionais e clientes através de uma plataforma intuitiva e eficiente de agendamentos. Buscamos revolucionar a maneira como as pessoas gerenciam seu tempo e compromissos, oferecendo uma solução tecnológica de ponta que atenda às necessidades do mercado moderno.</p>
+    </div>
+
+    <div class="team-section">
+      <h2>Nossa Equipe</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <i class="fas fa-user-tie"></i>
+          <h3>Ismael Torres</h3>
+          <p>CEO & Fundador</p>
+        </div>
+        
+        <div class="team-member">
+          <i class="fas fa-user-gear"></i>
+          <h3>Sthella Abreu</h3>
+          <p>Desenvolvedora Chefe</p>
+        </div>
+        
+        <div class="team-member">
+          <i class="fas fa-user-graduate"></i>
+          <h3>Daniel França</h3>
+          <p>Gestor de Produto</p>
+        </div>
+
+        <div class="team-member">
+          <i class="fas fa-user-check"></i>
+          <h3>Evelyn</h3>
+          <p>Gerente de Marketing</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>AgendaPro</h4>
+        <p>Sua solução completa para agendamentos online</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Úteis</h4>
+        <a href="terms.html">Termos de Uso</a>
+        <a href="privacy.html">Política de Privacidade</a>
+        <a href="https://exemplo.com/ajuda">Central de Ajuda</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>contato@agendapro.com</p>
+        <p>(11) 99999-9999</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
