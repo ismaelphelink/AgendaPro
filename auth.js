@@ -1,148 +1,156 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Admin key for registration
-  const ADMIN_KEY = '123456789'; // Updated admin key
+  // Chave do administrador para registro
+  const ADMIN_KEY = '123456789'; // Chave de administrador que será usada no processo de registro
 
-  // Handle admin checkbox toggle
-  const isAdminCheckbox = document.getElementById('isAdmin');
-  const adminKeyGroup = document.querySelector('.admin-key-group');
+  // Manipula a alternância do checkbox de administrador
+  const isAdminCheckbox = document.getElementById('isAdmin'); // Captura o checkbox de administrador
+  const adminKeyGroup = document.querySelector('.admin-key-group'); // Captura o grupo de entrada da chave de administrador
   if (isAdminCheckbox && adminKeyGroup) {
+    // Escuta a mudança no checkbox de administrador
     isAdminCheckbox.addEventListener('change', function() {
-      adminKeyGroup.style.display = this.checked ? 'block' : 'none';
-      const adminKeyInput = document.getElementById('adminKey');
+      adminKeyGroup.style.display = this.checked ? 'block' : 'none'; // Exibe ou oculta o campo de chave de administrador dependendo do checkbox
+      const adminKeyInput = document.getElementById('adminKey'); // Captura o campo de chave de administrador
       if (!this.checked && adminKeyInput) {
-        adminKeyInput.value = '';
+        adminKeyInput.value = ''; // Limpa o campo de chave de administrador caso o checkbox não esteja marcado
       }
     });
   }
 
-  // Phone number mask
-  const phoneInput = document.getElementById('phone');
+  // Máscara para o campo de telefone
+  const phoneInput = document.getElementById('phone'); // Captura o campo de telefone
   if (phoneInput) {
+    // Escuta a entrada de dados no campo de telefone
     phoneInput.addEventListener('input', function(e) {
-      let value = e.target.value.replace(/\D/g, '');
+      let value = e.target.value.replace(/\D/g, ''); // Remove qualquer caractere que não seja número
       if (value.length <= 11) {
-        value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
-        value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+        value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); // Formata o número de telefone com parênteses
+        value = value.replace(/(\d)(\d{4})$/, '$1-$2'); // Adiciona o hífen ao número de telefone
       }
-      e.target.value = value;
+      e.target.value = value; // Atualiza o valor do campo com o número formatado
     });
   }
 
-  // Handle Registration
-  const registerForm = document.getElementById('registerForm');
+  // Manipula o formulário de registro
+  const registerForm = document.getElementById('registerForm'); // Captura o formulário de registro
   if (registerForm) {
+    // Escuta o envio do formulário de registro
     registerForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
+      e.preventDefault(); // Previne o envio padrão do formulário
+
+      // Captura os dados inseridos nos campos do formulário
       const username = document.getElementById('username').value;
       const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
       const password = document.getElementById('password').value;
       const confirmPassword = document.getElementById('confirmPassword').value;
-      const isAdmin = document.getElementById('isAdmin').checked;
-      const adminKey = document.getElementById('adminKey')?.value;
-      
+      const isAdmin = document.getElementById('isAdmin').checked; // Verifica se o usuário quer ser administrador
+      const adminKey = document.getElementById('adminKey')?.value; // Captura a chave de administrador, caso tenha sido fornecida
+
+      // Verifica se as senhas não coincidem
       if (password !== confirmPassword) {
-        showError('As senhas não coincidem');
+        showError('As senhas não coincidem'); // Exibe uma mensagem de erro se as senhas não coincidirem
         return;
       }
 
-      // Validate admin key if trying to register as admin
+      // Valida a chave de administrador, se o usuário estiver tentando se registrar como administrador
       if (isAdmin && adminKey !== ADMIN_KEY) {
-        showError('Chave de administrador inválida');
+        showError('Chave de administrador inválida'); // Exibe erro se a chave de administrador for inválida
         return;
       }
-      
-      // Get existing users or initialize empty array
+
+      // Recupera os usuários existentes ou inicializa um array vazio
       const users = JSON.parse(localStorage.getItem('users')) || [];
-      
-      // Check if email already exists
+
+      // Verifica se o e-mail já está registrado
       if (users.some(user => user.email === email)) {
-        showError('Este email já está cadastrado');
+        showError('Este email já está cadastrado'); // Exibe erro se o e-mail já estiver cadastrado
         return;
       }
-      
-      // Add new user with phone number
+
+      // Adiciona um novo usuário com os dados inseridos, incluindo o número de telefone
       users.push({
         username,
         email,
-        phone, // Include phone number in user data
+        phone, // Inclui o número de telefone
         password,
-        isAdmin: isAdmin && adminKey === ADMIN_KEY // Only set as admin if key is correct
+        isAdmin: isAdmin && adminKey === ADMIN_KEY // Define como administrador apenas se a chave for válida
       });
-      
-      // Save to localStorage
+
+      // Salva os usuários no localStorage
       localStorage.setItem('users', JSON.stringify(users));
-      
-      // Redirect to login
+
+      // Exibe uma mensagem de sucesso e redireciona para a página de login
       alert('Cadastro realizado com sucesso!');
       window.location.href = 'login.html';
     });
   }
-  
-  // Handle Login
-  const loginForm = document.getElementById('loginForm');
+
+  // Manipula o formulário de login
+  const loginForm = document.getElementById('loginForm'); // Captura o formulário de login
   if (loginForm) {
+    // Escuta o envio do formulário de login
     loginForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
+      e.preventDefault(); // Previne o envio padrão do formulário
+
+      // Captura o e-mail e a senha inseridos
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      
-      // Get users from localStorage
+
+      // Recupera os usuários registrados do localStorage
       const users = JSON.parse(localStorage.getItem('users')) || [];
-      
-      // Find user
+
+      // Procura o usuário com o e-mail e senha fornecidos
       const user = users.find(u => u.email === email && u.password === password);
-      
+
       if (user) {
-        // Store logged in user with admin status
+        // Armazena o usuário logado e seu status de administrador no localStorage
         localStorage.setItem('currentUser', JSON.stringify({
           username: user.username,
           email: user.email,
           isAdmin: user.isAdmin
         }));
-        
-        alert('Login realizado com sucesso!');
-        window.location.href = 'index.html';
+
+        alert('Login realizado com sucesso!'); // Exibe uma mensagem de sucesso
+        window.location.href = 'index.html'; // Redireciona para a página inicial
       } else {
-        showError('Email ou senha incorretos');
+        showError('Email ou senha incorretos'); // Exibe erro se o e-mail ou senha estiverem incorretos
       }
     });
   }
-  
-  // Error handling function
+
+  // Função para exibir mensagens de erro
   function showError(message) {
-    let errorDiv = document.querySelector('.error-message');
+    let errorDiv = document.querySelector('.error-message'); // Captura a área de mensagens de erro
     if (!errorDiv) {
-      errorDiv = document.createElement('div');
-      errorDiv.className = 'error-message';
-      document.querySelector('.auth-form').insertBefore(errorDiv, document.querySelector('.auth-form').firstChild);
+      errorDiv = document.createElement('div'); // Cria o elemento de erro se ele não existir
+      errorDiv.className = 'error-message'; // Define a classe do elemento
+      document.querySelector('.auth-form').insertBefore(errorDiv, document.querySelector('.auth-form').firstChild); // Insere o elemento no início do formulário
     }
-    errorDiv.style.display = 'block';
-    errorDiv.textContent = message;
+    errorDiv.style.display = 'block'; // Exibe a mensagem de erro
+    errorDiv.textContent = message; // Define o conteúdo da mensagem de erro
   }
-  
-  // Check if user is logged in
+
+  // Função para verificar se o usuário está logado
   function checkAuth() {
-    const currentUser = localStorage.getItem('currentUser');
+    const currentUser = localStorage.getItem('currentUser'); // Recupera o usuário logado
+    // Se não estiver logado e não for na página de login ou registro, redireciona para a página de login
     if (!currentUser && !window.location.href.includes('login.html') && !window.location.href.includes('register.html')) {
       window.location.href = 'login.html';
     }
   }
-  
-  // Uncomment the following line to enforce authentication
+
+  // Descomente a linha abaixo para forçar a autenticação
   // checkAuth();
 });
 
-// Update the logout function to handle admin status
+// Função para logout
 function logout() {
-  localStorage.removeItem('currentUser');
-  window.location.href = 'index.html';
+  localStorage.removeItem('currentUser'); // Remove o usuário logado do localStorage
+  window.location.href = 'index.html'; // Redireciona para a página inicial
 }
 
-// New function to check if current user is admin
+// Nova função para verificar se o usuário atual é administrador
 function isCurrentUserAdmin() {
-  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  return currentUser?.isAdmin === true;
+  const currentUser = JSON.parse(localStorage.getItem('currentUser')); // Recupera o usuário logado
+  return currentUser?.isAdmin === true; // Retorna verdadeiro se o usuário for administrador
 }
