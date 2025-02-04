@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html> 
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Termos de Uso - AgendaPro</title>
+  <meta charset="UTF-8"> <!-- Define a codificação de caracteres para suportar acentos e caracteres especiais -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva em dispositivos móveis -->
+  <title>Termos de Uso - AgendaPro</title> <!-- Título da página exibido na aba do navegador -->
+
+  <!-- Importa a fonte "Poppins" do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Importa os ícones do Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Importa o arquivo de estilos externo -->
   <link rel="stylesheet" href="style.css">
+ <!-- Favicon da página -->
+ <link rel="icon" type="image/png" href="d:\Users\922265\Downloads\favicon AgendaPro.png">
   <style>
+    /* Container principal dos termos */
     .terms-container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 4rem 5%;
     }
 
+    /* Cabeçalho da seção de termos */
     .terms-header {
       text-align: center;
       margin-bottom: 3rem;
@@ -25,6 +35,7 @@
       margin-bottom: 1rem;
     }
 
+    /* Estiliza as seções dos termos */
     .terms-section {
       background: white;
       padding: 2rem;
@@ -43,30 +54,12 @@
       margin: 1.5rem 0 1rem;
     }
 
-    .terms-section p {
+    .terms-section p, .terms-section li {
       color: var(--text-color);
       line-height: 1.8;
-      margin-bottom: 1rem;
     }
 
-    .terms-section ul {
-      margin: 1rem 0;
-      padding-left: 2rem;
-    }
-
-    .terms-section li {
-      color: var(--text-color);
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-    }
-
-    .last-updated {
-      text-align: center;
-      color: var(--text-color);
-      font-style: italic;
-      margin-top: 3rem;
-    }
-
+    /* Ajustes para dispositivos menores */
     @media (max-width: 768px) {
       .terms-header h1 {
         font-size: 2rem;
@@ -79,68 +72,79 @@
   </style>
 </head>
 <body>
+
+  <!-- Barra de navegação -->
   <nav class="navbar">
     <div class="logo">
       <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fas fa-calendar-check"></i>
-        <span>AgendaPro</span>
+        <i class="fas fa-calendar-check"></i> <!-- Ícone de calendário -->
+        <span>AgendaPro</span> <!-- Nome da plataforma -->
       </a>
     </div>
+    
     <div class="nav-links">
       <a href="index.html">Início</a>
       <a href="about.html">Sobre</a>
-      <button class="login-btn" onclick="window.location.href='login.html'">Entrar</button>
+      <button class="login-btn" onclick="window.location.href='login.html'">Entrar</button> <!-- Botão de login -->
     </div>
   </nav>
 
+  <!-- Container principal dos Termos de Uso -->
   <div class="terms-container">
     <div class="terms-header">
-      <h1>Termos de Uso</h1>
+      <h1>Termos de Uso</h1> <!-- Título principal -->
     </div>
 
+    <!-- Seção 1: Aceitação dos Termos -->
     <div class="terms-section">
       <h2>1. Aceitação dos Termos</h2>
-      <p>Ao acessar e utilizar o AgendaPro, você concorda com estes Termos de Uso e todas as leis e regulamentos aplicáveis. Se você não concordar com algum destes termos, está proibido de usar ou acessar este site.</p>
+      <p>Ao acessar e utilizar o AgendaPro, você concorda com estes Termos de Uso...</p>
     </div>
 
+    <!-- Seção 2: Uso da Plataforma -->
     <div class="terms-section">
       <h2>2. Uso da Plataforma</h2>
       <h3>2.1 Cadastro</h3>
-      <p>Para utilizar nossos serviços, é necessário criar uma conta fornecendo informações verdadeiras e atualizadas. Você é responsável por manter a confidencialidade de sua conta e senha.</p>
+      <p>Para utilizar nossos serviços, é necessário criar uma conta...</p>
       
       <h3>2.2 Agendamentos</h3>
-      <p>Os agendamentos realizados através da plataforma estão sujeitos à disponibilidade e confirmação. O usuário deve comparecer no horário agendado ou cancelar com antecedência mínima de 4 horas.</p>
+      <p>Os agendamentos realizados através da plataforma...</p>
     </div>
 
+    <!-- Seção 3: Responsabilidades -->
     <div class="terms-section">
       <h2>3. Responsabilidades</h2>
       <ul>
         <li>O usuário é responsável por todas as atividades realizadas em sua conta.</li>
-        <li>O AgendaPro não se responsabiliza por eventuais prejuízos decorrentes de falhas técnicas.</li>
-        <li>É proibido o uso da plataforma para fins ilegais ou não autorizados.</li>
+        <li>O AgendaPro não se responsabiliza por falhas técnicas.</li>
       </ul>
     </div>
 
+    <!-- Seção 4: Alterações nos Serviços -->
     <div class="terms-section">
       <h2>4. Alterações nos Serviços</h2>
-      <p>O AgendaPro reserva-se o direito de modificar ou descontinuar, temporária ou permanentemente, o serviço com ou sem aviso prévio. Não seremos responsáveis por qualquer modificação, suspensão ou descontinuação do serviço.</p>
+      <p>O AgendaPro reserva-se o direito de modificar ou descontinuar...</p>
     </div>
 
+    <!-- Data da última atualização -->
     <p class="last-updated">Última atualização: 10 de Janeiro de 2024</p>
   </div>
 
+  <!-- Rodapé -->
   <footer>
     <div class="footer-content">
       <div class="footer-section">
         <h4>AgendaPro</h4>
         <p>Sua solução completa para agendamentos online</p>
       </div>
+      
       <div class="footer-section">
         <h4>Links Úteis</h4>
         <a href="terms.html">Termos de Uso</a>
         <a href="privacy.html">Política de Privacidade</a>
-        <a href="https://exemplo.com/ajuda">Central de Ajuda</a>
+        <a href="help.html">Central de Ajuda</a>
       </div>
+      
       <div class="footer-section">
         <h4>Contato</h4>
         <p>contato@agendapro.com</p>
@@ -149,6 +153,8 @@
     </div>
   </footer>
 
+  <!-- Importa o arquivo de script externo -->
   <script src="script.js"></script>
 </body>
 </html>
+                                                                                                                
