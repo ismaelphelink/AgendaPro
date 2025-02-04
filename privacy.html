@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Definindo a codificação de caracteres e a responsividade para dispositivos móveis -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Privacidade - AgendaPro</title>
+
+  <!-- Link para importar a fonte Poppins do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Link para importar o Font Awesome (ícones) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Link para o arquivo de estilos CSS -->
   <link rel="stylesheet" href="style.css">
+   <!-- Favicon da página -->
+   <link rel="icon" type="image/png" href="d:\Users\922265\Downloads\favicon AgendaPro.png">
   <style>
+    /* Estilos gerais para o container da política de privacidade */
     .privacy-container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 4rem 5%;
     }
 
+    /* Estilos para o cabeçalho da seção de política de privacidade */
     .privacy-header {
       text-align: center;
       margin-bottom: 3rem;
@@ -25,6 +36,7 @@
       margin-bottom: 1rem;
     }
 
+    /* Estilo para cada seção da política de privacidade */
     .privacy-section {
       background: white;
       padding: 2rem;
@@ -60,6 +72,7 @@
       line-height: 1.6;
     }
 
+    /* Estilo para a tabela de dados coletados */
     .data-table {
       width: 100%;
       border-collapse: collapse;
@@ -78,6 +91,7 @@
       color: var(--primary-color);
     }
 
+    /* Estilo para a data de última atualização */
     .last-updated {
       text-align: center;
       color: var(--text-color);
@@ -85,6 +99,7 @@
       margin-top: 3rem;
     }
 
+    /* Media query para ajustar o layout em telas menores */
     @media (max-width: 768px) {
       .privacy-header h1 {
         font-size: 2rem;
@@ -102,9 +117,11 @@
   </style>
 </head>
 <body>
+  <!-- Navegação do site -->
   <nav class="navbar">
     <div class="logo">
       <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+        <!-- Ícone de calendário (usando Font Awesome) e nome da plataforma -->
         <i class="fas fa-calendar-check"></i>
         <span>AgendaPro</span>
       </a>
@@ -112,15 +129,18 @@
     <div class="nav-links">
       <a href="index.html">Início</a>
       <a href="about.html">Sobre</a>
+      <!-- Botão para login -->
       <button class="login-btn" onclick="window.location.href='login.html'">Entrar</button>
     </div>
   </nav>
 
+  <!-- Conteúdo da página de Política de Privacidade -->
   <div class="privacy-container">
     <div class="privacy-header">
       <h1>Política de Privacidade</h1>
     </div>
 
+    <!-- Seção sobre coleta de dados -->
     <div class="privacy-section">
       <h2>1. Coleta de Dados</h2>
       <p>O AgendaPro coleta informações pessoais apenas quando voluntariamente fornecidas pelos usuários durante:</p>
@@ -131,6 +151,7 @@
       </ul>
       
       <h3>Dados Coletados</h3>
+      <!-- Tabela de dados coletados -->
       <table class="data-table">
         <tr>
           <th>Tipo de Dado</th>
@@ -155,6 +176,7 @@
       </table>
     </div>
 
+    <!-- Seção sobre uso das informações -->
     <div class="privacy-section">
       <h2>2. Uso das Informações</h2>
       <p>As informações coletadas são utilizadas para:</p>
@@ -166,6 +188,7 @@
       </ul>
     </div>
 
+    <!-- Seção sobre proteção de dados -->
     <div class="privacy-section">
       <h2>3. Proteção de Dados</h2>
       <p>Implementamos medidas de segurança para proteger suas informações pessoais, incluindo:</p>
@@ -177,6 +200,7 @@
       </ul>
     </div>
 
+    <!-- Seção sobre direitos do usuário -->
     <div class="privacy-section">
       <h2>4. Seus Direitos</h2>
       <p>Você tem direito a:</p>
@@ -188,26 +212,32 @@
       </ul>
     </div>
 
+    <!-- Seção sobre cookies -->
     <div class="privacy-section">
       <h2>5. Cookies</h2>
       <p>Utilizamos cookies para melhorar sua experiência de navegação. Você pode configurar seu navegador para recusar cookies, mas isso pode afetar algumas funcionalidades do site.</p>
     </div>
 
+    <!-- Data de última atualização da política -->
     <p class="last-updated">Última atualização: 10 de Janeiro de 2024</p>
   </div>
 
+  <!-- Rodapé da página -->
   <footer>
     <div class="footer-content">
+      <!-- Seção sobre a AgendaPro -->
       <div class="footer-section">
         <h4>AgendaPro</h4>
         <p>Sua solução completa para agendamentos online</p>
       </div>
+      <!-- Seção com links úteis -->
       <div class="footer-section">
         <h4>Links Úteis</h4>
         <a href="terms.html">Termos de Uso</a>
         <a href="privacy.html">Política de Privacidade</a>
-        <a href="https://exemplo.com/ajuda">Central de Ajuda</a>
+        <a href="help.html">Central de Ajuda</a>
       </div>
+      <!-- Seção de contato -->
       <div class="footer-section">
         <h4>Contato</h4>
         <p>contato@agendapro.com</p>
@@ -216,6 +246,7 @@
     </div>
   </footer>
 
+  <!-- Inclusão de script externo -->
   <script src="script.js"></script>
 </body>
 </html>
