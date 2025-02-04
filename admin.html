@@ -4,17 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel Administrativo - AgendaPro</title>
+  <!-- Link para a fonte Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Link para a biblioteca Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Estilos principais do site -->
   <link rel="stylesheet" href="style.css">
+  <!-- Estilos específicos para o painel administrativo -->
   <link rel="stylesheet" href="admin.css">
+   <!-- Favicon da página -->
+   <link rel="icon" type="image/png" href="d:\Users\922265\Downloads\favicon AgendaPro.png">
   <style>
+    /* Container principal do painel administrativo */
     .admin-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
     }
 
+    /* Estilo para o cabeçalho do painel */
     .admin-header {
       display: flex;
       justify-content: space-between;
@@ -22,16 +30,19 @@
       margin-bottom: 2rem;
     }
 
+    /* Título do cabeçalho */
     .admin-header h1 {
       color: white;
       font-size: 2rem;
     }
 
+    /* Controles para mudar a visualização */
     .view-controls {
       display: flex;
       gap: 1rem;
     }
 
+    /* Estilo para o botão de visualização */
     .view-btn {
       padding: 0.5rem 1rem;
       border: none;
@@ -41,16 +52,19 @@
       cursor: pointer;
     }
 
+    /* Estilo para o botão de visualização ativo */
     .view-btn.active {
       background-color: var(--primary-color);
       color: white;
     }
 
+    /* Estilos para os filtros no painel */
     .admin-filters {
       display: flex;
       gap: 1rem;
     }
 
+    /* Filtro de data */
     .date-filter {
       padding: 0.5rem;
       border: 1px solid var(--gray-light);
@@ -58,6 +72,7 @@
       font-family: inherit;
     }
 
+    /* Botão de recarregar a lista de agendamentos */
     .reload-btn {
       padding: 0.5rem 1rem;
       border: none;
@@ -67,12 +82,14 @@
       cursor: pointer;
     }
 
+    /* Estilo para o grid de agendamentos */
     .appointments-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
     }
 
+    /* Estilo para cada cartão de agendamento */
     .appointment-card {
       background: white;
       padding: 1rem;
@@ -80,18 +97,21 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
+    /* Título dentro do cartão de agendamento */
     .appointment-card h3 {
       color: var(--primary-color);
       margin-bottom: 0.5rem;
     }
 
+    /* Descrição do agendamento */
     .appointment-card p {
       color: var(--text-color);
       font-size: 0.9rem;
     }
 
+    /* Estilos do modal que exibe detalhes do agendamento */
     .modal {
-      display: none;
+      display: none; /* O modal começa invisível */
       position: fixed;
       z-index: 1;
       left: 0;
@@ -100,9 +120,10 @@
       height: 100%;
       overflow: auto;
       background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0,0,0,0.4); /* Fundo semi-transparente */
     }
 
+    /* Estilo para o conteúdo do modal */
     .modal-content {
       background-color: #fefefe;
       margin: 15% auto;
@@ -114,6 +135,7 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
+    /* Estilo para o botão de fechar do modal */
     .close {
       color: #aaa;
       float: right;
@@ -121,6 +143,7 @@
       font-weight: bold;
     }
 
+    /* Alteração de cor e cursor ao passar o mouse sobre o botão de fechar */
     .close:hover,
     .close:focus {
       color: black;
@@ -130,47 +153,59 @@
   </style>
 </head>
 <body>
+  <!-- Barra de navegação -->
   <nav class="navbar">
     <div class="logo">
+      <!-- Link do logo para a página inicial -->
       <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
         <i class="fas fa-calendar-check"></i>
         <span>AgendaPro</span>
       </a>
     </div>
     <div class="nav-links">
+      <!-- Link para a página inicial -->
       <a href="index.html">
         <i class="fas fa-home"></i> Início
       </a>
     </div>
   </nav>
 
+  <!-- Container principal do painel administrativo -->
   <div class="admin-container">
     <div class="admin-header">
+      <!-- Título do painel com um ícone -->
       <h1><i class="fas fa-user-shield"></i> Painel Administrativo</h1>
     </div>
 
+    <!-- Visualização da lista de agendamentos -->
     <div class="list-view active">
       <div class="admin-filters">
+        <!-- Filtro de data -->
         <input type="date" id="dateFilter" class="date-filter">
+        <!-- Botão de recarregar a lista de agendamentos -->
         <button id="reloadBtn" class="reload-btn">
           <i class="fas fa-sync-alt"></i> Recarregar
         </button>
       </div>
+      <!-- Grid de agendamentos, onde os agendamentos serão listados -->
       <div class="appointments-grid">
-        <!-- Appointments will be populated here -->
+        <!-- Os agendamentos serão preenchidos aqui -->
       </div>
     </div>
   </div>
 
-  <!-- Modal for appointment details -->
+  <!-- Modal para mostrar os detalhes do agendamento -->
   <div id="appointmentModal" class="modal">
     <div class="modal-content">
+      <!-- Botão para fechar o modal -->
       <span class="close">&times;</span>
       <h2>Detalhes do Agendamento</h2>
+      <!-- Detalhes do agendamento serão preenchidos aqui -->
       <div id="appointmentDetails"></div>
     </div>
   </div>
 
+  <!-- Script que contém a lógica do painel administrativo -->
   <script src="admin.js"></script>
 </body>
 </html>
