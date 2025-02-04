@@ -1,608 +1,690 @@
+/* Estilos para o contêiner principal do administrador */
 .admin-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 2rem;
+  max-width: 1200px; /* Define a largura máxima do contêiner para 1200px */
+  margin: 2rem auto; /* Define as margens superior e inferior como 2rem e centraliza o contêiner horizontalmente */
+  padding: 0 2rem; /* Adiciona 2rem de padding nas laterais (esquerda e direita) */
 }
 
+/* Estilos para o cabeçalho da área administrativa */
 .admin-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  padding: 2rem;
-  border-radius: 1rem;
-  color: white;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+  display: flex; /* Utiliza flexbox para alinhar os itens no cabeçalho */
+  justify-content: space-between; /* Distribui os itens com espaço igual entre eles */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  margin-bottom: 2rem; /* Adiciona uma margem inferior de 2rem */
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Aplica um gradiente diagonal como fundo, usando as cores primária e secundária definidas como variáveis CSS */
+  padding: 2rem; /* Aplica padding de 2rem em todos os lados do cabeçalho */
+  border-radius: 1rem; /* Arredonda os cantos do cabeçalho */
+  color: white; /* Define a cor do texto como branca */
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1); /* Aplica uma sombra suave ao cabeçalho */
 }
 
+/* Estilo para o título dentro do cabeçalho */
 .admin-header h1 {
-  color: white;
-  font-size: 2rem;
-  margin: 0;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: white; /* Define a cor do título como branca */
+  font-size: 2rem; /* Define o tamanho da fonte como 2rem */
+  margin: 0; /* Remove qualquer margem padrão ao redor do título */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Aplica uma sombra suave ao texto */
 }
 
+/* Estilo para o filtro (caixa de entrada) dentro da área administrativa */
 .admin-filters {
-  display: flex;
-  gap: 1rem;
-  background: white;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  align-items: center;
+  display: flex; /* Utiliza flexbox para dispor os elementos em linha */
+  gap: 1rem; /* Adiciona um espaçamento de 1rem entre os filtros */
+  background: white; /* Define o fundo da área de filtros como branco */
+  padding: 0.75rem; /* Aplica um padding de 0.75rem dentro da área de filtros */
+  border-radius: 0.75rem; /* Arredonda os cantos da área de filtros */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Aplica uma sombra suave ao redor da área de filtros */
+  align-items: center; /* Alinha os filtros verticalmente ao centro */
 }
 
+/* Estilos para o campo de data do filtro */
 .date-filter {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--gray-light);
-  border-radius: 0.5rem;
-  font-family: inherit;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  min-width: 200px;
+  padding: 0.75rem 1rem; /* Aplica padding de 0.75rem na vertical e 1rem na horizontal */
+  border: 2px solid var(--gray-light); /* Define a borda com cor cinza clara */
+  border-radius: 0.5rem; /* Arredonda os cantos do campo de data */
+  font-family: inherit; /* Usa a mesma família de fonte que o elemento pai */
+  font-size: 0.95rem; /* Define o tamanho da fonte como 0.95rem */
+  transition: all 0.3s ease; /* Aplica uma transição suave para qualquer mudança de estilo */
+  min-width: 200px; /* Define uma largura mínima de 200px */
 }
 
+/* Estilo para quando o campo de data estiver em foco */
 .date-filter:focus {
-  border-color: var(--accent-color);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(244, 148, 28, 0.1);
+  border-color: var(--accent-color); /* Muda a cor da borda para a cor de destaque quando estiver em foco */
+  outline: none; /* Remove a linha de foco padrão */
+  box-shadow: 0 0 0 3px rgba(244, 148, 28, 0.1); /* Aplica uma sombra suave ao redor do campo em foco */
 }
 
+/* Estilos para o campo de serviço do filtro */
 .service-filter {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--gray-light);
-  border-radius: 0.5rem;
-  font-family: inherit;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  min-width: 200px;
+  padding: 0.75rem 1rem; /* Aplica padding de 0.75rem na vertical e 1rem na horizontal */
+  border: 2px solid var(--gray-light); /* Define a borda com cor cinza clara */
+  border-radius: 0.5rem; /* Arredonda os cantos do campo de serviço */
+  font-family: inherit; /* Usa a mesma família de fonte que o elemento pai */
+  font-size: 0.95rem; /* Define o tamanho da fonte como 0.95rem */
+  transition: all 0.3s ease; /* Aplica uma transição suave para qualquer mudança de estilo */
+  min-width: 200px; /* Define uma largura mínima de 200px */
 }
 
+/* Estilo para quando o campo de serviço estiver em foco */
 .service-filter:focus {
-  border-color: var(--accent-color);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(244, 148, 28, 0.1);
+  border-color: var(--accent-color); /* Muda a cor da borda para a cor de destaque quando estiver em foco */
+  outline: none; /* Remove a linha de foco padrão */
+  box-shadow: 0 0 0 3px rgba(244, 148, 28, 0.1); /* Aplica uma sombra suave ao redor do campo em foco */
 }
 
+/* Estilos para o botão de recarga */
 .reload-btn {
-  background: linear-gradient(45deg, var(--accent-color), var(--accent-dark));
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
+  background: linear-gradient(45deg, var(--accent-color), var(--accent-dark)); /* Aplica um gradiente de cor ao fundo do botão */
+  color: white; /* Define a cor do texto como branca */
+  border: none; /* Remove a borda padrão */
+  padding: 0.75rem 1.5rem; /* Aplica padding de 0.75rem na vertical e 1.5rem na horizontal */
+  border-radius: 0.5rem; /* Arredonda os cantos do botão */
+  cursor: pointer; /* Define o cursor como pointer para indicar que o botão é clicável */
+  font-weight: 500; /* Define a espessura da fonte para 500 */
+  display: flex; /* Utiliza flexbox para alinhar o conteúdo dentro do botão */
+  align-items: center; /* Alinha os itens dentro do botão ao centro */
+  gap: 0.5rem; /* Define um espaço de 0.5rem entre os itens dentro do botão */
+  transition: all 0.3s ease; /* Aplica uma transição suave para qualquer mudança de estilo */
 }
 
+/* Estilos para o ícone dentro do botão de recarga */
 .reload-btn i {
-  font-size: 1rem;
-  transition: transform 0.3s ease;
+  font-size: 1rem; /* Define o tamanho da fonte do ícone como 1rem */
+  transition: transform 0.3s ease; /* Aplica uma transição suave ao movimento de rotação do ícone */
 }
 
+/* Estilo para o botão de recarga quando estiver em hover */
 .reload-btn:hover {
-  background: linear-gradient(45deg, var(--accent-dark), var(--accent-color));
-  transform: translateY(-2px);
+  background: linear-gradient(45deg, var(--accent-dark), var(--accent-color)); /* Inverte o gradiente de cor do botão */
+  transform: translateY(-2px); /* Move o botão para cima suavemente */
 }
 
+/* Estilo para o ícone dentro do botão de recarga quando estiver em hover */
 .reload-btn:hover i {
-  transform: rotate(180deg);
+  transform: rotate(180deg); /* Gira o ícone em 180 graus */
 }
 
+/* Estilos para o grid de agendamentos */
 .appointments-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  display: grid; /* Utiliza o modelo de layout grid */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Cria colunas flexíveis que se ajustam ao tamanho da tela */
+  gap: 1.5rem; /* Define o espaçamento entre os itens do grid */
+  margin-top: 2rem; /* Adiciona uma margem superior de 2rem */
 }
 
+/* Estilos para o cartão de agendamento */
 .appointment-card {
-  background: white;
-  padding: 1.75rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  border: 1px solid var(--gray-light);
-  position: relative;
-  overflow: hidden;
+  background: white; /* Define o fundo do cartão como branco */
+  padding: 1.75rem; /* Aplica padding de 1.75rem ao redor do conteúdo */
+  border-radius: 1rem; /* Arredonda os cantos do cartão */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Aplica uma sombra suave ao redor do cartão */
+  transition: all 0.3s ease; /* Aplica uma transição suave para qualquer mudança de estilo */
+  border: 1px solid var(--gray-light); /* Define uma borda fina e cinza clara ao redor do cartão */
+  position: relative; /* Define o posicionamento como relativo para usar elementos posicionados dentro do cartão */
+  overflow: hidden; /* Garante que nenhum conteúdo ultrapasse as bordas do cartão */
 }
 
+/* Estilos para a linha superior do cartão de agendamento */
 .appointment-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(45deg, var(--accent-color), var(--accent-dark));
+  content: ''; /* Cria um pseudo-elemento vazio */
+  position: absolute; /* Posiciona o pseudo-elemento de forma absoluta em relação ao cartão */
+  top: 0; /* Posiciona o pseudo-elemento no topo do cartão */
+  left: 0; /* Posiciona o pseudo-elemento na parte esquerda do cartão */
+  width: 100%; /* Define a largura do pseudo-elemento como 100% da largura do cartão */
+  height: 4px; /* Define a altura do pseudo-elemento como 4px */
+  background: linear-gradient(45deg, var(--accent-color), var(--accent-dark)); /* Aplica um gradiente ao pseudo-elemento */
 }
 
+/* Estilo para o cartão de agendamento quando estiver em hover */
 .appointment-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transform: translateY(-5px); /* Move o cartão para cima suavemente */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Aplica uma sombra maior e mais suave ao cartão */
 }
 
+/* Estilos para o cabeçalho do cartão de agendamento */
 .appointment-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--gray-light);
+  display: flex; /* Utiliza flexbox para alinhar os itens no cabeçalho */
+  justify-content: space-between; /* Distribui os itens com espaço igual entre eles */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  margin-bottom: 1.5rem; /* Adiciona uma margem inferior de 1.5rem */
+  padding-bottom: 1rem; /* Adiciona um padding inferior de 1rem */
+  border-bottom: 1px solid var(--gray-light); /* Adiciona uma borda inferior fina de cor cinza */
 }
 
+/* Estilo para o tempo de agendamento */
 .appointment-time {
-  color: var(--accent-color);
-  font-weight: 600;
-  font-size: 1.1rem;
+  color: var(--accent-color); /* Define a cor do texto como a cor de destaque */
+  font-weight: 600; /* Define a espessura da fonte como 600 */
+  font-size: 1.1rem; /* Define o tamanho da fonte como 1.1rem */
 }
 
+/* Estilo para o serviço de agendamento */
 .appointment-service {
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  color: var(--primary-color); /* Define a cor do texto como a cor primária */
+  font-weight: 600; /* Define a espessura da fonte como 600 */
+  font-size: 1.2rem; /* Define o tamanho da fonte como 1.2rem */
+  margin-bottom: 1rem; /* Adiciona uma margem inferior de 1rem */
 }
 
+/* Estilos para o usuário da consulta */
 .appointment-user {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-color);
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
+  display: flex; /* Usado para alinhar itens em linha */
+  align-items: center; /* Alinha verticalmente os itens no centro */
+  gap: 0.5rem; /* Espaçamento entre os itens */
+  color: var(--text-color); /* Cor do texto */
+  font-size: 0.95rem; /* Tamanho da fonte */
+  margin-bottom: 0.75rem; /* Espaçamento inferior */
 }
 
+/* Ícone do usuário, colorido com a variável de cor de destaque */
 .appointment-user i {
   color: var(--accent-color);
 }
 
+/* Descrição do compromisso com um fundo e borda arredondada */
 .appointment-description {
-  color: var(--text-color);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  background: var(--background-color);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
+  color: var(--text-color); /* Cor do texto */
+  font-size: 0.95rem; /* Tamanho da fonte */
+  line-height: 1.5; /* Distância entre as linhas */
+  background: var(--background-color); /* Cor de fundo */
+  padding: 1rem; /* Preenchimento interno */
+  border-radius: 0.5rem; /* Borda arredondada */
+  margin: 1rem 0; /* Margem superior e inferior */
 }
 
+/* Ações do compromisso, organizadas com flexbox */
 .appointment-actions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--gray-light);
+  display: flex; /* Exibe os botões em linha */
+  gap: 0.5rem; /* Espaçamento entre os botões */
+  margin-top: 1rem; /* Margem superior */
+  padding-top: 0.75rem; /* Preenchimento superior */
+  border-top: 1px solid var(--gray-light); /* Linha superior */
 }
 
+/* Estilo geral para os botões de ação */
 .action-btn {
-  flex: 1;
-  padding: 0.4rem 0.6rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  min-width: fit-content;
+  flex: 1; /* Os botões se expandem para preencher o espaço disponível */
+  padding: 0.4rem 0.6rem; /* Preenchimento interno */
+  border: none; /* Sem borda */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  font-family: inherit; /* Mantém a família de fontes herdada */
+  font-size: 0.75rem; /* Tamanho da fonte */
+  font-weight: 500; /* Peso da fonte */
+  display: flex; /* Flexbox para alinhar ícones e textos */
+  align-items: center; /* Alinhamento vertical dos itens */
+  justify-content: center; /* Alinhamento horizontal */
+  gap: 0.25rem; /* Espaçamento entre o ícone e o texto */
+  transition: all 0.3s ease; /* Transição suave ao interagir */
+  white-space: nowrap; /* Impede a quebra de linha no texto */
+  min-width: fit-content; /* Largura mínima ajustada ao conteúdo */
 }
 
+/* Ícone dentro do botão de ação, ajustando o tamanho */
 .action-btn i {
-  font-size: 0.7rem;
+  font-size: 0.7rem; /* Tamanho do ícone */
 }
 
+/* Estilos específicos para cada botão de ação */
 .edit-btn, .reschedule-btn, .cancel-btn {
-  padding: 0.35rem 0.5rem;
+  padding: 0.35rem 0.5rem; /* Preenchimento ajustado para cada botão */
 }
 
+/* Estilos do botão de edição */
 .edit-btn {
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color); /* Cor de fundo */
+  color: white; /* Cor do texto */
 }
 
+/* Efeito hover no botão de edição */
 .edit-btn:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
+  background: var(--secondary-color); /* Cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de elevação */
 }
 
+/* Estilos do botão de reagendamento */
 .reschedule-btn {
-  background: var(--accent-color);
-  color: white;
+  background: var(--accent-color); /* Cor de fundo */
+  color: white; /* Cor do texto */
 }
 
+/* Efeito hover no botão de reagendamento */
 .reschedule-btn:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px);
+  background: var(--accent-dark); /* Cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de elevação */
 }
 
+/* Estilos do botão de cancelamento */
 .cancel-btn {
-  background: #ef4444;
-  color: white;
+  background: #ef4444; /* Cor de fundo */
+  color: white; /* Cor do texto */
 }
 
+/* Efeito hover no botão de cancelamento */
 .cancel-btn:hover {
-  background: #dc2626;
-  transform: translateY(-2px);
+  background: #dc2626; /* Cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de elevação */
 }
 
+/* Indicador de compromisso, um marcador circular */
 .appointment-marker {
-  width: 6px;
-  height: 6px;
-  background-color: var(--accent-color);
-  border-radius: 50%;
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 6px; /* Largura do marcador */
+  height: 6px; /* Altura do marcador */
+  background-color: var(--accent-color); /* Cor do marcador */
+  border-radius: 50%; /* Forma arredondada */
+  position: absolute; /* Posicionamento absoluto */
+  bottom: 2px; /* Distância do fundo */
+  left: 50%; /* Centralizado horizontalmente */
+  transform: translateX(-50%); /* Ajusta a posição para centralizar */
 }
 
+/* Caso não haja compromissos, exibe uma mensagem centralizada */
 .no-appointments {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 2rem;
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  grid-column: 1 / -1; /* Faz com que ocupe todas as colunas */
+  text-align: center; /* Alinha o texto ao centro */
+  padding: 2rem; /* Preenchimento interno */
+  background: white; /* Cor de fundo */
+  border-radius: 1rem; /* Bordas arredondadas */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave */
 }
 
+/* Ícone de ausência de compromissos */
 .no-appointments i {
-  font-size: 3rem;
-  color: var(--gray-light);
-  margin-bottom: 1rem;
+  font-size: 3rem; /* Tamanho grande para o ícone */
+  color: var(--gray-light); /* Cor do ícone */
+  margin-bottom: 1rem; /* Espaço abaixo do ícone */
 }
 
+/* Estilo para o texto na seção "sem compromissos" */
 .no-appointments p {
-  color: var(--text-color);
-  opacity: 0.7;
+  color: var(--text-color); /* Cor do texto */
+  opacity: 0.7; /* Opacidade reduzida */
 }
 
+/* Duração do compromisso, exibindo o tempo de forma destacada */
 .appointment-duration {
-  color: var(--accent-color);
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  color: var(--accent-color); /* Cor do texto */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  margin: 0.5rem 0; /* Margem superior e inferior */
+  display: flex; /* Flexbox para alinhamento */
+  align-items: center; /* Alinha verticalmente os itens */
+  gap: 0.5rem; /* Espaçamento entre os itens */
 }
 
+/* Ícone dentro da duração */
 .appointment-duration i {
-  font-size: 1rem;
+  font-size: 1rem; /* Tamanho do ícone */
 }
 
+/* Estilos do modal, a janela flutuante */
 .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 1000;
-  animation: fadeIn 0.3s ease;
+  display: none; /* Inicialmente oculto */
+  position: fixed; /* Fixa na tela */
+  top: 0; /* Alinhado ao topo */
+  left: 0; /* Alinhado à esquerda */
+  width: 100%; /* Ocupa toda a largura */
+  height: 100%; /* Ocupa toda a altura */
+  background: rgba(0,0,0,0.5); /* Fundo semitransparente */
+  z-index: 1000; /* Fica acima de outros elementos */
+  animation: fadeIn 0.3s ease; /* Animação de aparecimento */
 }
 
+/* Conteúdo dentro do modal */
 .modal-content {
-  background: white;
-  margin: 5% auto;
-  padding: 2.5rem;
-  border-radius: 1rem;
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-  animation: slideIn 0.3s ease;
+  background: white; /* Cor de fundo */
+  margin: 5% auto; /* Centraliza com margem superior */
+  padding: 2.5rem; /* Preenchimento interno */
+  border-radius: 1rem; /* Bordas arredondadas */
+  width: 90%; /* Largura do modal */
+  max-width: 600px; /* Largura máxima */
+  position: relative; /* Permite posicionamento dos elementos internos */
+  animation: slideIn 0.3s ease; /* Animação de deslizamento */
 }
 
+/* Animação de fadeIn: cria um efeito de aparecimento gradual do conteúdo */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; } /* Início da animação: o elemento começa invisível */
+  to { opacity: 1; }   /* Fim da animação: o elemento fica totalmente visível */
 }
 
+/* Animação slideIn: cria um efeito de deslizamento com fade-in */
 @keyframes slideIn {
   from { 
-    opacity: 0;
-    transform: translateY(-20px);
+    opacity: 0; /* Início da animação: o elemento começa invisível */
+    transform: translateY(-20px); /* Começa deslocado para cima */
   }
   to { 
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Fim da animação: o elemento fica totalmente visível */
+    transform: translateY(0); /* Desloca o elemento para a posição original */
   }
 }
 
+/* Estilo do botão de fechamento de um modal ou caixa de detalhes */
 .close {
-  position: absolute;
-  right: 1.5rem;
-  top: 1rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-color);
-  transition: all 0.2s;
+  position: absolute; /* Posição absoluta dentro do contêiner pai */
+  right: 1.5rem; /* Alinha à direita */
+  top: 1rem; /* Alinha ao topo */
+  font-size: 1.5rem; /* Define o tamanho da fonte */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  color: var(--text-color); /* Cor do ícone do botão, baseada na variável de cor de texto */
+  transition: all 0.2s; /* Transição suave de todas as propriedades */
 }
 
+/* Efeito ao passar o mouse sobre o botão de fechar: muda a cor e rotaciona */
 .close:hover {
-  color: var(--accent-color);
-  transform: rotate(90deg);
+  color: var(--accent-color); /* Muda a cor para o destaque */
+  transform: rotate(90deg); /* Rotaciona o ícone para 90 graus */
 }
 
+/* Estilo da seção de detalhes de um compromisso ou agendamento */
 .appointment-details {
-  margin-top: 2rem;
+  margin-top: 2rem; /* Espaço acima da seção de detalhes */
 }
 
+/* Linha de detalhes de um compromisso: exibe as informações de forma organizada */
 .details-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  border-bottom: 1px solid var(--gray-light);
-  transition: background-color 0.2s;
+  display: flex; /* Flexbox para alinhar as informações */
+  justify-content: space-between; /* Espaça uniformemente os itens na linha */
+  padding: 1rem; /* Preenche os itens com 1rem de espaço */
+  border-bottom: 1px solid var(--gray-light); /* Linha de separação abaixo */
+  transition: background-color 0.2s; /* Transição suave para a cor de fundo */
 }
 
+/* Efeito ao passar o mouse sobre a linha de detalhes: muda o fundo */
 .details-row:hover {
-  background-color: var(--background-color);
+  background-color: var(--background-color); /* Muda o fundo para a cor de fundo */
 }
 
+/* Estilo para o rótulo (label) dentro da linha de detalhes */
 .details-label {
-  font-weight: 500;
-  color: var(--primary-color);
+  font-weight: 500; /* Deixa o texto em negrito */
+  color: var(--primary-color); /* Cor do texto do rótulo */
 }
 
+/* Estilo para o valor do detalhe */
 .details-value {
-  color: var(--text-color);
+  color: var(--text-color); /* Cor do texto do valor do detalhe */
 }
 
+/* Estilo dos formulários de edição e reagendamento */
 .edit-form,
 .reschedule-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  display: flex; /* Usando flexbox para organizar os itens em coluna */
+  flex-direction: column; /* Organiza os itens verticalmente */
+  gap: 1.5rem; /* Espaço entre os itens */
+  margin-top: 2rem; /* Espaço acima dos formulários */
 }
 
+/* Estilo de cada grupo dentro dos formulários */
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  display: flex; /* Flexbox para alinhar os itens */
+  flex-direction: column; /* Organiza os itens em uma coluna */
+  gap: 0.75rem; /* Espaço entre os itens */
 }
 
+/* Estilo para o rótulo de cada campo do formulário */
 .form-group label {
-  font-weight: 500;
-  color: var(--text-color);
+  font-weight: 500; /* Deixa o texto do rótulo em negrito */
+  color: var(--text-color); /* Cor do texto do rótulo */
 }
 
+/* Estilo dos campos de entrada, seleção e texto */
 .form-group input,
 .form-group select,
 .form-group textarea {
-  padding: 0.875rem;
-  border: 2px solid var(--gray-light);
-  border-radius: 0.5rem;
-  font-family: inherit;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  padding: 0.875rem; /* Preenchimento interno */
+  border: 2px solid var(--gray-light); /* Borda com cor suave */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  font-family: inherit; /* Herda a fonte do elemento pai */
+  font-size: 0.95rem; /* Tamanho da fonte */
+  transition: all 0.3s ease; /* Transição suave para as mudanças */
 }
 
+/* Efeito de foco nos campos de entrada, seleção e textarea */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--accent-color);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(244, 148, 28, 0.1);
+  border-color: var(--accent-color); /* Muda a cor da borda ao focar */
+  outline: none; /* Remove o contorno padrão */
+  box-shadow: 0 0 0 3px rgba(244, 148, 28, 0.1); /* Adiciona sombra suave ao focar */
 }
 
+/* Estilo específico para os campos textarea (áreas de texto) */
 .form-group textarea {
-  min-height: 120px;
-  resize: vertical;
+  min-height: 120px; /* Define uma altura mínima */
+  resize: vertical; /* Permite redimensionar verticalmente */
 }
 
+/* Estilo para o botão de salvar */
 .save-btn {
-  background: linear-gradient(45deg, var(--accent-color), var(--accent-dark));
-  color: white;
-  padding: 1rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 1rem;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
+  background: linear-gradient(45deg, var(--accent-color), var(--accent-dark)); /* Gradiente de cor de fundo */
+  color: white; /* Cor do texto */
+  padding: 1rem; /* Preenchimento interno */
+  border: none; /* Remove a borda */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  cursor: pointer; /* Indica que é clicável */
+  font-weight: 500; /* Peso da fonte */
+  font-size: 1rem; /* Tamanho da fonte */
+  margin-top: 1rem; /* Espaço acima do botão */
+  transition: all 0.3s ease; /* Transição suave para os efeitos */
 }
 
+/* Efeito ao passar o mouse sobre o botão de salvar */
 .save-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(244, 148, 28, 0.2);
+  transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+  box-shadow: 0 4px 12px rgba(244, 148, 28, 0.2); /* Adiciona sombra ao botão */
 }
 
+/* Estilo para o botão de logout */
 .logout-btn {
-  background: linear-gradient(45deg, #ef4444, #dc2626);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #ef4444, #dc2626); /* Gradiente de vermelho para o fundo */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda */
+  padding: 0.75rem 1.5rem; /* Preenchimento interno */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  cursor: pointer; /* Indica que é clicável */
+  font-weight: 500; /* Peso da fonte */
+  transition: all 0.3s ease; /* Transição suave para os efeitos */
 }
 
+/* Efeito ao passar o mouse sobre o botão de logout */
 .logout-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2); /* Adiciona sombra ao botão */
 }
 
+/* Estilo para os controles de visualização (botões) */
 .view-controls {
-  display: flex;
-  gap: 1rem;
+  display: flex; /* Flexbox para alinhar os botões */
+  gap: 1rem; /* Espaço entre os botões */
 }
 
+/* Estilo para os botões de visualização */
 .view-btn {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  padding: 0.75rem 1.5rem; /* Preenchimento interno */
+  border: none; /* Remove a borda */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  background: rgba(255, 255, 255, 0.2); /* Fundo transparente com sombra */
+  color: white; /* Cor do texto */
+  cursor: pointer; /* Indica que é clicável */
+  font-weight: 500; /* Peso da fonte */
+  transition: all 0.3s ease; /* Transição suave para os efeitos */
+  display: flex; /* Flexbox para o alinhamento do ícone e texto */
+  align-items: center; /* Alinha o conteúdo ao centro verticalmente */
+  gap: 0.5rem; /* Espaço entre o ícone e o texto */
 }
 
+/* Estilo para os botões de visualização. */
 .view-btn:hover,
 .view-btn.active {
-  background: white;
-  color: var(--primary-color);
+  background: white; /* Fundo branco ao passar o mouse ou quando o botão está ativo. */
+  color: var(--primary-color); /* Cor do texto muda para a cor primária. */
 }
 
+/* Inicialmente, as visualizações de calendário e lista estão ocultas. */
 .calendar-view,
 .list-view {
   display: none;
-  margin-top: 2rem;
+  margin-top: 2rem; /* Espaço acima da visualização. */
 }
 
+/* Quando as visualizações de calendário ou lista estão ativas, elas são exibidas. */
 .calendar-view.active,
 .list-view.active {
   display: block;
 }
 
+/* Estilo para o calendário no painel administrativo. */
 #admin-calendar {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: white; /* Fundo branco para o calendário. */
+  padding: 2rem; /* Espaçamento interno. */
+  border-radius: 1rem; /* Cantos arredondados. */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave ao redor do calendário. */
 }
 
+/* Estilo para o ponto que representa uma consulta no calendário. */
 .appointment-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--accent-color);
-  border-radius: 50%;
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 8px; /* Largura do ponto. */
+  height: 8px; /* Altura do ponto. */
+  background: var(--accent-color); /* Cor de fundo do ponto. */
+  border-radius: 50%; /* Forma circular. */
+  position: absolute; /* Posicionamento absoluto. */
+  bottom: 4px; /* Distância do fundo. */
+  left: 50%; /* Centraliza horizontalmente. */
+  transform: translateX(-50%); /* Ajuste para centralizar o ponto. */
 }
 
+/* Estilo para as informações das consultas no dia selecionado no calendário. */
 .calendar-day-appointments {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  z-index: 100;
-  min-width: 200px;
-  margin-top: 0.5rem;
+  display: none; /* Inicialmente oculto. */
+  position: absolute; /* Posicionamento absoluto para sobrepor. */
+  top: 100%; /* Fica abaixo do dia selecionado. */
+  left: 50%; /* Centraliza horizontalmente. */
+  transform: translateX(-50%); /* Ajuste para centralizar. */
+  background: white; /* Fundo branco. */
+  padding: 1rem; /* Espaçamento interno. */
+  border-radius: 0.5rem; /* Cantos arredondados. */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra ao redor da caixa. */
+  z-index: 100; /* Garante que ficará acima de outros elementos. */
+  min-width: 200px; /* Largura mínima da caixa. */
+  margin-top: 0.5rem; /* Espaço acima da caixa. */
 }
 
+/* Exibe as informações da consulta quando o dia do calendário é passado o mouse. */
 .calendar-day:hover .calendar-day-appointments {
   display: block;
 }
 
+/* Estilo para cada consulta no calendário. */
 .day-appointment {
-  padding: 0.5rem;
-  border-bottom: 1px solid var(--gray-light);
-  cursor: pointer;
+  padding: 0.5rem; /* Espaçamento interno. */
+  border-bottom: 1px solid var(--gray-light); /* Linha inferior para separar as consultas. */
+  cursor: pointer; /* Aponta que é clicável. */
 }
 
+/* Remove a linha inferior da última consulta. */
 .day-appointment:last-child {
   border-bottom: none;
 }
 
+/* Estilo para quando o usuário passa o mouse sobre a consulta. */
 .day-appointment:hover {
-  background: var(--background-color);
+  background: var(--background-color); /* Muda o fundo ao passar o mouse. */
 }
 
+/* Estilo para o cabeçalho no painel administrativo em telas pequenas (max-width: 768px). */
 @media (max-width: 768px) {
   .admin-header {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
+    flex-direction: column; /* Coloca os itens em coluna. */
+    gap: 1rem; /* Espaçamento entre os itens. */
+    padding: 1.5rem; /* Espaçamento interno. */
   }
 
   .admin-header h1 {
-    font-size: 1.75rem;
-    text-align: center;
+    font-size: 1.75rem; /* Reduz o tamanho do título. */
+    text-align: center; /* Centraliza o título. */
   }
 
+  /* Estilo para filtros em tela pequena. */
   .admin-filters {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: row; /* Coloca os filtros em linha. */
+    flex-wrap: wrap; /* Permite que os filtros se ajustem à largura da tela. */
   }
 
   .date-filter,
   .service-filter,
   .reload-btn {
-    flex: 1;
-    min-width: 0;
+    flex: 1; /* Faz com que cada filtro ocupe o mesmo espaço. */
+    min-width: 0; /* Garante que os filtros não ultrapassem o limite. */
   }
 
   .reload-btn {
-    justify-content: center;
+    justify-content: center; /* Centraliza o botão de recarregar. */
   }
 
+  /* Ajustes na grid de compromissos. */
   .appointments-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Deixa a grid com apenas uma coluna. */
   }
 
+  /* Estilo para os cartões de compromissos. */
   .appointment-card {
-    padding: 1.25rem;
+    padding: 1.25rem; /* Espaçamento interno maior. */
   }
 
+  /* Alinha as ações dos compromissos em uma linha e ajusta os botões. */
   .appointment-actions {
     flex-direction: row;
     flex-wrap: wrap;
   }
 
+  /* Ajusta o tamanho dos botões de ação. */
   .action-btn {
     padding: 0.3rem 0.4rem;
-    font-size: 0.7rem;
+    font-size: 0.7rem; /* Tamanho menor da fonte. */
   }
-  
+
   .action-btn i {
-    font-size: 0.65rem;
+    font-size: 0.65rem; /* Ícone menor. */
   }
 
+  /* Ajuste para o conteúdo do modal. */
   .modal-content {
-    width: 95%;
-    margin: 5% auto;
-    padding: 1.25rem;
+    width: 95%; /* Torna o modal mais largo em telas pequenas. */
+    margin: 5% auto; /* Centraliza o modal na tela. */
+    padding: 1.25rem; /* Aumenta o padding interno. */
   }
 
+  /* Ajustes nas linhas de detalhes no modal. */
   .details-row {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: column; /* Coloca as linhas de detalhes em coluna. */
+    gap: 0.5rem; /* Espaçamento entre os detalhes. */
   }
 }
 
+/* Ajustes para telas ainda menores (max-width: 480px). */
 @media (max-width: 480px) {
   .admin-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Reduz ainda mais o tamanho do título. */
   }
 
+  /* Reduz o tamanho da fonte dos cartões de compromissos. */
   .appointment-card {
     font-size: 0.9rem;
   }
 
   .appointment-time {
-    font-size: 1rem;
+    font-size: 1rem; /* Ajuste no tamanho do tempo do compromisso. */
   }
 
+  /* Ajuste ainda maior nos botões de ação. */
   .action-btn {
-    padding: 0.25rem 0.35rem;
-    font-size: 0.65rem;
+    padding: 0.25rem 0.35rem; /* Reduz o padding. */
+    font-size: 0.65rem; /* Fonte menor. */
   }
-  
+
   .action-btn i {
-    font-size: 0.6rem;
+    font-size: 0.6rem; /* Ícones menores. */
   }
 }
