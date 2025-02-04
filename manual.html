@@ -1,30 +1,47 @@
+<!-- Declaração do tipo de documento HTML -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Configuração do conjunto de caracteres para suportar acentos e caracteres especiais -->
   <meta charset="UTF-8">
+  <!-- Configuração para tornar o site responsivo em dispositivos móveis -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Título da página exibido na aba do navegador -->
   <title>Manual do Usuário - AgendaPro</title>
+  
+  <!-- Importação da fonte "Poppins" do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Importação dos ícones da Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Importação do arquivo de estilos externo -->
   <link rel="stylesheet" href="style.css">
+   <!-- Favicon da página -->
+   <link rel="icon" type="image/png" href="d:\Users\922265\Downloads\favicon AgendaPro.png">
   <style>
+    /* Container principal do manual */
     .manual-container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 4rem 5%;
     }
 
+    /* Cabeçalho do manual */
     .manual-header {
       text-align: center;
       margin-bottom: 3rem;
     }
 
+    /* Estilo do título principal do manual */
     .manual-header h1 {
       color: var(--primary-color);
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
+    /* Navegação do manual */
     .manual-navigation {
       background: white;
       padding: 1rem;
@@ -33,6 +50,7 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
+    /* Lista de navegação */
     .manual-navigation ul {
       list-style: none;
       padding: 0;
@@ -41,6 +59,7 @@
       gap: 1rem;
     }
 
+    /* Links de navegação */
     .manual-navigation a {
       color: var(--text-color);
       text-decoration: none;
@@ -49,11 +68,13 @@
       transition: all 0.3s ease;
     }
 
+    /* Efeito hover nos links de navegação */
     .manual-navigation a:hover {
       background: var(--background-color);
       color: var(--primary-color);
     }
 
+    /* Seções do manual */
     .manual-section {
       background: white;
       padding: 2rem;
@@ -62,6 +83,7 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
+    /* Títulos das seções */
     .manual-section h2 {
       color: var(--primary-color);
       margin-bottom: 1.5rem;
@@ -70,17 +92,20 @@
       gap: 0.5rem;
     }
 
+    /* Subtítulos das seções */
     .manual-section h3 {
       color: var(--accent-color);
       margin: 1.5rem 0 1rem;
     }
 
+    /* Parágrafos do manual */
     .manual-section p {
       color: var(--text-color);
       line-height: 1.8;
       margin-bottom: 1rem;
     }
 
+    /* Listas dentro do manual */
     .manual-section ul {
       margin: 1rem 0;
       padding-left: 2rem;
@@ -92,6 +117,7 @@
       line-height: 1.6;
     }
 
+    /* Caixa de dicas */
     .tip-box {
       background: var(--background-color);
       padding: 1rem;
@@ -106,6 +132,7 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Cartão de suporte */
     .support-card {
       background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
       color: white;
@@ -125,37 +152,45 @@
       text-decoration: underline;
     }
 
+    /* Item de FAQ (Perguntas Frequentes) */
     .faq-item {
       border-bottom: 1px solid var(--gray-light);
       padding: 1rem 0;
     }
 
+    /* Remove a borda inferior do último item da FAQ */
     .faq-item:last-child {
       border-bottom: none;
     }
 
+    /* Perguntas da FAQ */
     .faq-question {
       font-weight: 500;
       color: var(--primary-color);
       margin-bottom: 0.5rem;
     }
 
+    /* Estilização das capturas de tela */
     .screenshot {
       max-width: 100%;
       border-radius: 0.5rem;
       margin: 1rem 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
+  
+    /* Estilos responsivos para telas menores (máximo de 768px) */
     @media (max-width: 768px) {
+      /* Ajusta o tamanho da fonte do título do manual */
       .manual-header h1 {
         font-size: 2rem;
       }
       
+      /* Modifica a direção da navegação para coluna (em vez de linha) */
       .manual-navigation ul {
         flex-direction: column;
       }
       
+      /* Adiciona um padding maior nas seções */
       .manual-section {
         padding: 1.5rem;
       }
@@ -163,28 +198,40 @@
   </style>
 </head>
 <body>
+
+  <!-- Barra de navegação -->
   <nav class="navbar">
     <div class="logo">
+      <!-- Link da logo que redireciona para a página inicial -->
       <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+        <!-- Ícone da logo -->
         <i class="fas fa-calendar-check"></i>
+        <!-- Nome do site -->
         <span>AgendaPro</span>
       </a>
     </div>
     <div class="nav-links">
+      <!-- Links de navegação -->
       <a href="index.html">Início</a>
       <a href="about.html">Sobre</a>
+      <!-- Botão de login -->
       <button class="login-btn" onclick="window.location.href='login.html'">Entrar</button>
     </div>
   </nav>
 
+  <!-- Container principal do manual -->
   <div class="manual-container">
+
+    <!-- Cabeçalho do manual -->
     <div class="manual-header">
       <h1>Manual do Usuário</h1>
       <p>Guia completo para utilização do AgendaPro</p>
     </div>
 
+    <!-- Navegação do manual -->
     <nav class="manual-navigation">
       <ul>
+        <!-- Links de navegação para as seções do manual -->
         <li><a href="#primeiros-passos">Primeiros Passos</a></li>
         <li><a href="#agendamentos">Agendamentos</a></li>
         <li><a href="#perfil">Gerenciar Perfil</a></li>
@@ -194,47 +241,53 @@
       </ul>
     </nav>
 
+    <!-- Seção "Primeiros Passos" -->
     <div id="primeiros-passos" class="manual-section">
       <h2><i class="fas fa-flag-checkered"></i> Primeiros Passos</h2>
       <h3>Criando sua conta</h3>
       <p>Para começar a usar o AgendaPro, siga estes passos:</p>
       <ol>
+        <!-- Lista de passos para criar a conta -->
         <li>Clique no botão "Entrar" no canto superior direito</li>
         <li>Selecione a opção "Cadastre-se"</li>
         <li>Preencha seus dados pessoais</li>
         <li>Confirme seu email</li>
         <li>Faça login com suas credenciais</li>
       </ol>
-      
+      <!-- Dica adicional -->
       <div class="tip-box">
         <strong>Dica:</strong>
         <p>Mantenha seus dados sempre atualizados para receber notificações importantes sobre seus agendamentos.</p>
       </div>
     </div>
 
+    <!-- Seção "Agendamentos" -->
     <div id="agendamentos" class="manual-section">
       <h2><i class="fas fa-calendar-check"></i> Realizando Agendamentos</h2>
       <h3>Como agendar um serviço</h3>
       <p>O processo de agendamento é simples e intuitivo:</p>
       <ol>
+        <!-- Lista de etapas para realizar o agendamento -->
         <li>Selecione o serviço desejado dentre as opções disponíveis</li>
         <li>Adicione uma descrição específica do serviço (opcional)</li>
         <li>Escolha uma data disponível no calendário</li>
         <li>Selecione um horário disponível</li>
         <li>Confirme seu agendamento</li>
       </ol>
-
+      <!-- Dica importante -->
       <div class="tip-box">
         <strong>Importante:</strong>
         <p>Certifique-se de chegar com 5 minutos de antecedência ao seu horário agendado.</p>
       </div>
     </div>
 
+    <!-- Seção "Gerenciar Perfil" -->
     <div id="perfil" class="manual-section">
       <h2><i class="fas fa-user-circle"></i> Gerenciando seu Perfil</h2>
       <h3>Meus Agendamentos</h3>
       <p>Para visualizar ou gerenciar seus agendamentos:</p>
       <ol>
+        <!-- Lista de ações para gerenciar agendamentos -->
         <li>Clique em seu nome no canto superior direito</li>
         <li>Selecione "Meus Agendamentos"</li>
         <li>Visualize todos os seus agendamentos ativos</li>
@@ -242,11 +295,13 @@
       </ol>
     </div>
 
+    <!-- Seção "Área Administrativa" -->
     <div id="admin" class="manual-section">
       <h2><i class="fas fa-user-shield"></i> Área Administrativa</h2>
       <h3>Recursos para Administradores</h3>
       <p>Se você é um administrador, tem acesso a recursos especiais:</p>
       <ul>
+        <!-- Lista de recursos para administradores -->
         <li>Visualização completa de todos os agendamentos</li>
         <li>Gerenciamento de horários disponíveis</li>
         <li>Criação e edição de eventos especiais</li>
@@ -254,9 +309,11 @@
       </ul>
     </div>
 
+    <!-- Seção "Dúvidas Frequentes" -->
     <div id="faq" class="manual-section">
       <h2><i class="fas fa-question-circle"></i> Dúvidas Frequentes</h2>
       
+      <!-- Itens de FAQ -->
       <div class="faq-item">
         <p class="faq-question">Como cancelo um agendamento?</p>
         <p>Para cancelar um agendamento, acesse "Meus Agendamentos", localize o horário desejado e clique em "Cancelar". O cancelamento deve ser feito com no mínimo 4 horas de antecedência.</p>
@@ -273,10 +330,12 @@
       </div>
     </div>
 
+    <!-- Seção "Suporte" -->
     <div id="suporte" class="manual-section">
       <h2><i class="fas fa-headset"></i> Suporte Técnico</h2>
       <p>Caso precise de ajuda adicional, nossa equipe de suporte está disponível por diversos canais:</p>
       <ul>
+        <!-- Informações de contato do suporte -->
         <li>Email: suporte@agendapro.com</li>
         <li>WhatsApp: (11) 99999-9999</li>
         <li>Chat online: Segunda a Sexta, das 8h às 18h</li>
@@ -290,8 +349,10 @@
     </div>
   </div>
 
+  <!-- Rodapé -->
   <footer>
     <div class="footer-content">
+      <!-- Seções do rodapé -->
       <div class="footer-section">
         <h4>AgendaPro</h4>
         <p>Sua solução completa para agendamentos online</p>
@@ -310,6 +371,7 @@
     </div>
   </footer>
 
+  <!-- Script JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
