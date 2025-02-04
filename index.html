@@ -1,54 +1,82 @@
-<html lang="pt-BR">
+<!-- Definição do documento HTML com o idioma definido para português do Brasil -->
+<html lang="pt-BR"> 
 <head>
+  <!-- Define a codificação de caracteres para UTF-8, garantindo suporte a acentuação e caracteres especiais -->
   <meta charset="UTF-8">
+  
+  <!-- Configura a página para ser responsiva, ajustando a largura para a tela do dispositivo -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Define o título da página, que aparece na aba do navegador -->
   <title>Agenda Online</title>
+  
+  <!-- Importa a folha de estilos da biblioteca Flatpickr, utilizada para calendário -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
+  <!-- Importa o arquivo CSS externo para estilização da página -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Importa a fonte Poppins do Google Fonts para estilização do texto -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Importa os ícones da biblioteca Font Awesome para uso na página -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Favicon da página -->
+  <link rel="icon" type="image/png" href="d:\Users\922265\Downloads\favicon AgendaPro.png">
 </head>
 <body>
+  <!-- Barra de navegação -->
   <nav class="navbar">
     <div class="logo">
+      <!-- Link para a página inicial, incluindo um ícone e o nome da agenda -->
       <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
         <i class="fas fa-calendar-check"></i>
         <span>AgendaPro</span>
       </a>
     </div>
     <div class="nav-links">
+      <!-- Link para a página "Sobre" -->
       <a href="about.html">Sobre</a>
+      <!-- Botão para redirecionamento à página de login -->
       <button class="login-btn" onclick="window.location.href='login.html'">Entrar</button>
     </div>
   </nav>
 
+  <!-- Seção principal para reservas -->
   <main>
     <section class="booking-section">
       <h2>Faça sua reserva</h2>
       <div class="booking-container">
+        <!-- Escolha de serviços disponíveis -->
         <div class="service-select">
           <h3>Escolha o serviço</h3>
           <div class="service-options">
+            <!-- Cartão de serviço para Corte de Cabelo -->
             <div class="service-card">
               <i class="fas fa-cut"></i>
               <span>Corte de Cabelo</span>
               <p>60 min</p>
             </div>
+            <!-- Cartão de serviço para Pintura de Cabelo -->
             <div class="service-card">
               <i class="fas fa-palette"></i>
               <span>Pintura de Cabelo</span>
               <p>120 min</p>
             </div>
+            <!-- Cartão de serviço para Manicure -->
             <div class="service-card">
               <i class="fas fa-hand-sparkles"></i>
               <span>Manicure</span>
               <p>60 min</p>
             </div>
+            <!-- Cartão de serviço para Pedicure -->
             <div class="service-card">
               <i class="fas fa-shoe-prints"></i>
               <span>Pedicure</span>
               <p>90 min</p>
             </div>
+            <!-- Cartão de serviço para Design de Sobrancelha -->
             <div class="service-card">
               <i class="fas fa-eye"></i>
               <span>Design de Sobrancelha</span>
@@ -57,6 +85,7 @@
           </div>
         </div>
         
+        <!-- Seção para seleção da data da reserva -->
         <div class="calendar-section">
           <h3>Escolha a data</h3>
           <div id="calendar"></div>
@@ -65,13 +94,15 @@
     </section>
   </main>
 
+  <!-- Seção de eventos -->
   <section class="events-banner">
     <h3>Eventos</h3>
     <div class="events-container">
-      <!-- The new editable event card will be added here dynamically -->
+      <!-- Os eventos serão adicionados dinamicamente aqui -->
     </div>
   </section>
 
+  <!-- Rodapé da página -->
   <footer>
     <div class="footer-content">
       <div class="footer-section">
@@ -81,22 +112,27 @@
         <a href="manual.html">Manual do Usuário</a>
       </div>
       
+      <!-- Links úteis -->
       <div class="footer-section">
         <h4>Links Úteis</h4>
         <a href="terms.html">Termos de Uso</a>
         <a href="privacy.html">Política de Privacidade</a>
         <a href="help.html">Central de Ajuda</a>
       </div>
+      
+      <!-- Informações de contato -->
       <div class="footer-section">
         <h4>Contato</h4>
         <p>contato@agendapro.com</p>
         <p>(11) 99999-9999</p>
-        
       </div>
     </div>
   </footer>
 
+  <!-- Importa a biblioteca Flatpickr para funcionamento do calendário -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
+  <!-- Importa o arquivo de script externo para funcionalidades adicionais -->
   <script src="script.js"></script>
 </body>
 </html>
